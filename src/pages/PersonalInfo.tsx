@@ -46,7 +46,6 @@ export function PersonalInfo() {
           <Select placeholder="selecione" onChange={(event)=> setGender(event.target.value)} required>
             <option value="male">Masculino</option>
             <option value="femael">Feminino</option>
-            <option value="femael">Feminino</option>
             <option value="not-answer">Prefiro não responder</option>
           </Select>
         </FormControl>

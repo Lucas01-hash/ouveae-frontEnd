@@ -1,5 +1,5 @@
 import { Button, VStack } from "@chakra-ui/react";
-import React, { useEffect, useState } from "react";
+import React, { useEffect} from "react";
 import { IoMegaphone, IoChatbubbleEllipsesSharp } from "react-icons/io5";
 import {FaHandPointer} from "react-icons/fa"
 import { BiDislike, BiLike } from "react-icons/bi";
@@ -10,11 +10,6 @@ interface RequestsListsProps{}
 
 export function RequestsLists({}:RequestsListsProps) {
 
-  useEffect(()=>{
-    api.get("/lista.json").then((response)=>{
-      console.log(response.data)
-    })
-  }, [])
 
   const {changeEntryType} = useForm()
 

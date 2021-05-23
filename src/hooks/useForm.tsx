@@ -4,6 +4,7 @@ import {
     useContext,
     useState,
   } from "react";
+import { api } from "../services/api";
     
   interface personalForm {
     name:string;
@@ -54,7 +55,8 @@ import {
     changemessageForm:(value:messageForm)=>void
     createFormFinished:(value:messageForm)=>void
     formFinished:formFinished | null
-
+    isFormOk:boolean
+    responseProtocol:string
 
 
   }
@@ -70,6 +72,9 @@ import {
     const [userForm,setUserForm] = useState<userForm | null>(null)
     const [messageForm,setmessageForm] = useState<messageForm | null>(null)
     const [formFinished,setFormFinished] = useState<formFinished | null>(null)
+    const [isFormOk, setIsformOk] = useState<boolean>(false)
+    const [responseProtocol, setResponseProtocol] = useState("")
+
 
 
 
@@ -104,6 +109,27 @@ import {
             entry_type: entryType,
             topic: value.topic,
         })
+
+        api.post("https://v1.ouveai.com/entry/", {
+            "visibility": visibility,
+            name: personalForm && (personalForm.name),
+            phone: userForm && (userForm.phone),
+            district: userForm && (userForm.bairro),
+            gender: personalForm && (personalForm.gender),
+            age_group: personalForm && (personalForm.age) ,
+            subject: value.subject,
+            message: value.message,
+            email: userForm && userForm.email,
+            source: 1,
+            entry_type: entryType,
+            topic: value.topic,
+        }).then((response)=>{
+            console.log(response)
+            setResponseProtocol(response.data.protocol)
+            setIsformOk(true)
+        }).catch((err)=>{
+            console.error(err)
+        })
     }
   
    
@@ -120,7 +146,9 @@ import {
             changemessageForm,
             messageForm,
             createFormFinished,
-            formFinished
+            formFinished,
+            isFormOk,
+            responseProtocol
         }}
       >
         {children}

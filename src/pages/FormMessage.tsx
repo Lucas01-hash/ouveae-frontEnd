@@ -7,13 +7,22 @@ import {
   Select,
   Textarea,
 } from "@chakra-ui/react";
-import React, { FormEvent, useState } from "react";
+import React, { FormEvent, useEffect, useState } from "react";
 import { useForm } from "../hooks/useForm";
+import { api } from "../services/api";
+
+
+interface topic{
+  id:number;
+  name:string;
+}
 
 export function FormMessage() {
   const [topic, setTopic] = useState("")
   const [subject, setSubject] = useState("")
   const [message, setmessage] = useState("")
+  const [inputTopics, setTopicsInput] = useState<topic[]>([])
+
 
   const { createFormFinished} = useForm()
 
@@ -23,6 +32,15 @@ export function FormMessage() {
         subject,
         message})
   }
+  async function getTopics(){
+    let newTopics:topic[]= []
+    await api.get("/entry_topic/").then((response)=>{newTopics = response.data})
+    setTopicsInput(newTopics)
+  }
+
+  useEffect(()=>{
+    getTopics()
+    },[])
 
   return (
     <Box p="6" h="100%">
@@ -30,9 +48,11 @@ export function FormMessage() {
         <FormControl id="tema">
           <FormLabel m="0">Tema:</FormLabel>
           <Select placeholder="selecione" onChange={(event)=>setTopic(event.target.value)}>
-            <option value="option1">Option 1</option>
-            <option value="option2">Option 2</option>
-            <option value="option3">Option 3</option>
+            {
+              inputTopics.map((topicX)=>(
+                <option value={topicX.id}>{topicX.name}</option>
+              ))
+            }
           </Select>
         </FormControl>
         <FormControl mt="3" id="assunto">
