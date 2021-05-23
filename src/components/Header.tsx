@@ -27,7 +27,7 @@ export function Header() {
           Araguaína
         </Text>
 
-        <Image src="/bandeira.jpeg" w="50vw" mx="auto" />
+        <Image src="/bandeira.jpeg" w="50%" maxW="300px" mx="auto" />
         <Text mx="auto" w="fit-content">
           Prefeitura municipal
         </Text>
