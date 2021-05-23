@@ -53,7 +53,7 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 
 <h1>Ouve Aí Back-end</h1>
-<a href="https://github.com/Lucas01-hash/ouveai-back">Clique que será encaminhado para o codigo de front end</a>
+<a href="https://github.com/Lucas01-hash/ouveai-back">Clique que será encaminhado para o codigo de back end</a>
 
 </br>
 </br>
