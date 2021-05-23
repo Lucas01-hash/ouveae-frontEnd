@@ -15,7 +15,7 @@ export function RequestsLists({}:RequestsListsProps) {
 
   function selectType(event:any){
     changeEntryType(Number(event.target.id))
-  }
+  } 
 
   return (
     <VStack spacing={3} p="4">
