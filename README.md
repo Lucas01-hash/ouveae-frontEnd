@@ -59,7 +59,7 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 </br>
 
 
-<h4>Participantes do projeto:</h4></br>
+<h4>Participantes do projeto:</h4>
 1 - Lucas carvalho</br>
 2 - Bruno Gomes</br>
 3 - Maatheus Souza Santos</br>
