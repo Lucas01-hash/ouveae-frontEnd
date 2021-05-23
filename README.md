@@ -45,3 +45,24 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+
+<h1>Ouve Aí landing page</h1>
+<a href="https://ouveai.com/">Clique que será encaminhado para a landing page</a></br></br>
+<a href="https://github.com/Lucas01-hash/ouveai-landingpage">Clique que será encaminhado para o codigo da landing page</a>
+
+
+<h1>Ouve Aí Back-end</h1>
+<a href="https://github.com/Lucas01-hash/ouveai-back">Clique que será encaminhado para o codigo de front end</a>
+
+</br>
+</br>
+</br>
+</br>
+
+Participantes do projeto:</br>
+1 - Lucas carvalho</br>
+2 - Bruno Gomes</br>
+3 - Maatheus Souza Santos</br>
+4 - Francinery Esperança</br>
+5 - Vicente Garros
